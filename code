@@ -48,7 +48,7 @@ public:
         }
     }
 
-    // 학생의 점수 업데이트: 이부분 특히 어려웠는데, 
+    // 학생 점수 업데이트: 이부분 특히 어려웠는데, 이후에 학생 아이디를 지정했을때 없는 아이디면 업데이트가 안되는 로직을 활용합니다.
     bool updateGrade(const string& studentId, double newGrade) {
         auto it = studentGrades.find(studentId);
         if (it != studentGrades.end()) {
@@ -63,7 +63,7 @@ public:
         return subjectName;
     }
 
-    // 학생 점수 맵 반환
+    // 학생 점수 맵 반환: 학생 id와 점수를 매칭칭
     unordered_map<string, double>& getStudentGrades() {
         return studentGrades;
     }
